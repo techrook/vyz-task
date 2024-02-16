@@ -2,13 +2,13 @@ const { Router } = require("express");
 const userRouter = Router();
 
 const {
-    createUser,
-    loginUser,
-    inputName
+  createUser,
+  loginUser,
+  inputName,
 } = require("../controllers/user.controller");
-const auth =  require("../middlewares/authentication");
+const auth = require("../middlewares/authentication");
 
-userRouter.post("/register",  createUser);
+userRouter.post("/register", createUser);
 userRouter.post("/login", loginUser);
-userRouter.patch("/inputname/:id",auth, inputName)
+userRouter.patch("/inputname/:id", auth, inputName);
 module.exports = userRouter;
